@@ -1,0 +1,6 @@
+t2 = (function (t){print(t.x);});
+
+t1 = [{"x":"paok"}];
+
+t2(t1);
+print("\n");

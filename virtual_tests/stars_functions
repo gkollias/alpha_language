@@ -1,0 +1,23 @@
+
+function stars(num_of_stars){
+	n=0;
+	num_of_void = num_of_stars-1;
+	for(i=0;i<num_of_stars;i++){
+	
+		//print empty
+		for(j=0;j<num_of_void;j++)
+			print(" ");
+		for(n=num_of_void;n<num_of_stars;n++)
+			print("*");
+		num_of_void--;
+		print("\n");
+	}
+}
+y=0;
+print("Please give the number of stars:");
+x = input();
+print(x);
+print("\n");
+print(typeof(x));
+stars(10);
+stars(x);

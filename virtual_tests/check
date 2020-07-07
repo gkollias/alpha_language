@@ -1,0 +1,33 @@
+function check (variable, type, value) {
+
+    if (typeof(variable) != type) {
+	t2 = typeof(variable);
+        print("FAILED type: ", t2 , " != ", type, ", value: ", variable, "\n");
+        return nil;
+    }
+    if (value != variable) {
+        print("FAILED value: ", variable, " != ", value, "\n");
+        return nil;
+    }
+    print("PASSED: value: ", value, " type: ", type, "\n");
+}
+
+r1 = strtonum("foo");
+check(r1, "nil", nil);
+r1 = strtonum("3.12aac");
+check(r1, "nil", nil);
+r1 = strtonum("3.141");
+check(r1, "number", 3.141);
+r1 = sqrt(2);
+check(r1, "number", 1.41421356237309504880);
+r1 = sqrt(-1);
+check(r1, "nil", nil);
+r1 = cos(45);
+check(r1, "number", 0.5);
+r1 = sin(45);
+check(r1, "number", 0.5);
+r1 = totalarguments();
+check(r1, "nil", nil);
+r1 = argument(0);
+//check(r1, "nil", nil);
+

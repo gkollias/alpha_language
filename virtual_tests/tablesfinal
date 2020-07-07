@@ -1,0 +1,14 @@
+function foo(){return ;}
+t=[];
+
+total = [{foo:"nikos"},{t:"paok"},{true:false},{false:true},{"print":nil}];
+
+t["paok"] = total;
+
+print(t,"\n");
+
+print(total,"\n");
+
+print(objectmemberkeys(total),"\n");
+
+print(objectcopy(total),"\n");

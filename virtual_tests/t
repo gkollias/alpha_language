@@ -1,0 +1,7 @@
+t = [ { "key1" : 1 }, { "key1" : 2 }, { "key3" : "tria" }, { "key4" : true }, { "key5" : [ nil, 3, 4, nil, 5 ] } ];
+
+logic = [{true : "call_true"},{false : "call_false"}];
+
+
+print("Table t is: ", t, "\n");
+print(logic,"\n");

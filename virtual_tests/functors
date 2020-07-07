@@ -1,0 +1,6 @@
+t = [{"x":"paok"},{"()":(function(a){print(a);return this.x;})}];
+
+
+print(t("mia zwi "),"\n");
+
+print(t,"\n");

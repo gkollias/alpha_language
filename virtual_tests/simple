@@ -1,0 +1,13 @@
+a;
+b;
+
+function mul(x,y)
+{
+	z=x*y;
+
+	return z;
+}
+
+a = 10;
+
+mul(a,2);

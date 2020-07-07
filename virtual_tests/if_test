@@ -1,0 +1,9 @@
+x = 1;
+
+if(x == 1)
+{
+	if(x < 10)
+		print("lol\n\n\ttab test\n\n");
+}
+else
+	print("troll");

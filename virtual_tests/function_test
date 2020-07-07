@@ -1,0 +1,6 @@
+function mul(a,b){
+	return a*b;
+}
+c = mul(10,20);
+print(c);
+print(mul(10,10));

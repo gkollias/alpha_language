@@ -1,0 +1,104 @@
+/*
+    Test file for the final phase of HY-340: Languages & Compilers
+    Computer science dpt, University of Crete, Greece
+*/
+
+t = [ { "key1" : 1 }, { "key2" : 2 }, { "key3" : "tria" }, { "key4" : true }, { "key5" : [ nil, 3, 4, nil, 5 ] } ];
+
+print("Table t is: ", t, "\n");
+
+function foo() {
+    function lala() {
+        function prnt() {
+            local t = [ global t, 2, 3.14, "4", true, false ];
+            print("Table t in prnt is: ", t, "\n");
+        }
+        print("Function prnt printing: ", prnt, " and print: ", print, "\n");
+        prnt();
+    }
+    return lala;
+}
+
+f = foo();
+f();
+
+stdin = nil;
+while (true) {
+
+    if (typeof(stdin) == "string") {
+        if (stdin == "exit") {
+            break;
+        }
+    }
+
+    print("input: ");
+    stdin = input();
+    t1 = typeof(stdin);
+    print("typeof(stdin): ", t1 , " value of stdin: ", stdin, "\n");
+}
+
+ind = objectmemberkeys(t);
+len = objecttotalmembers(ind);
+print("Table indices of global t: ", ind, " which has length: ", len , "\n");
+
+function my_print () {
+
+    targs = totalarguments();
+    //or targs > 20) {
+    if (targs < 0 ) {
+        print("ERROR in my_print: arguments reported: ", targs, "\n");
+        return nil;
+    }
+
+    for (i = 0; i < totalarguments(); ++i) {
+    //for (i = 1; i <= totalarguments(); ++i) {
+        print(argument(i));
+    }
+}
+
+////////////////////////////////////////////////////////////////////////
+// PRINT FUNCTION HERE
+
+print_function = my_print;
+//print_function = print;
+
+////////////////////////////////////////////////////////////////////////
+
+tcopy = objectcopy(t);
+print_function("Table copy is: ", tcopy, " ", "and it is printed with print_function", "\n");
+
+function check (variable, type, value) {
+
+    if (typeof(variable) != type) {
+        my_print("FAILED type: ", typeof(variable) , " != ", type, ", value: ", variable, "\n");
+        return nil;
+    }
+    if (value != variable) {
+        my_print("FAILED value: ", variable, " != ", value, "\n");
+        return nil;
+    }
+    my_print("PASSED: value: ", value, " type: ", type, "\n");
+}
+
+r1 = strtonum("foo");
+check(r1, "nil", nil);
+r1 = strtonum("3.12a");
+check(r1, "nil", nil);
+r1 = strtonum("3.141");
+check(r1, "number", 3.141);
+r1 = sqrt(2);
+check(r1, "number", 1.41421356237309504880);
+r1 = sqrt(-1);
+check(r1, "nil", nil);
+r1 = cos(45);
+check(r1, "number", 0.5);
+r1 = sin(45);
+check(r1, "number", 0.5);
+r1 = totalarguments();
+check(r1, "nil", nil);
+r1 = argument(0);
+check(r1, "nil", nil);
+
+
+ax = strtonum("12");
+print("--->", ax);

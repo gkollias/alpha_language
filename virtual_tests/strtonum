@@ -1,0 +1,4 @@
+r1 = strtonum("foo");
+print(r1,"\n");
+r1 = typeof(r1);
+print(r1 ,"\n");

@@ -1,0 +1,8 @@
+a=input();
+b=input();
+c=input();
+
+if(a>b or c<a)
+{
+	print("Kalimera","\n");
+}
